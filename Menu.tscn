@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://background_menu.jpg" type="Texture" id=1]
+[ext_resource path="res://ARLRDBD.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="BackgroundMenu" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+scale = Vector2( 2.0915, 1.88482 )
+texture = ExtResource( 1 )
+
+[node name="play_button" type="Button" parent="."]
+margin_left = 456.0
+margin_top = 255.0
+margin_right = 793.0
+margin_bottom = 369.0
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+
+[node name="quit_button" type="Button" parent="."]
+margin_left = 458.0
+margin_top = 414.0
+margin_right = 795.0
+margin_bottom = 528.0
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+
+[node name="name_label" type="Label" parent="."]
+margin_left = 388.0
+margin_top = 74.0
+margin_right = 851.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 2 )
+text = "Tower Defense"
+align = 1
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
